@@ -7,7 +7,6 @@ class TextView extends StatelessWidget {
     required this.label,
     this.borderRadius,
     this.border,
-    this.padding,
     this.textDecorationProperties,
     required this.clipBehavior,
   });
@@ -27,9 +26,6 @@ class TextView extends StatelessWidget {
   // Border for parent container.
   final BoxBorder? border;
 
-  // Padding for parent container.
-  final EdgeInsetsGeometry? padding;
-
   // Clipping value for parent container.
   final Clip clipBehavior;
 
@@ -38,7 +34,6 @@ class TextView extends StatelessWidget {
     return Container(
       height: radius * 2,
       width: radius * 2,
-      padding: padding,
       clipBehavior: clipBehavior,
       decoration: BoxDecoration(
         border: border,
@@ -77,13 +72,12 @@ class TextWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return FittedBox(
       // Use fittedbox to resize text.
-      fit: textDecorationProperties?.useFittedBox ?? false
+      fit: textDecorationProperties?.useFittedBox ?? true
           ? BoxFit.contain
           : BoxFit.none,
       alignment: Alignment.center,
       child: Padding(
-        padding:
-            textDecorationProperties?.fontMargin ?? const EdgeInsets.all(3.0),
+        padding: textDecorationProperties?.padding ?? const EdgeInsets.all(3.0),
         child: Text(
           // Check if text empty or not.
           label == ''
@@ -93,9 +87,9 @@ class TextWidget extends StatelessWidget {
                   .toUpperCase(),
           style: TextStyle(
             fontStyle: textDecorationProperties?.fontStyle,
-            fontWeight: textDecorationProperties?.fontWeight,
+            fontWeight: textDecorationProperties?.fontWeight ?? FontWeight.bold,
             fontSize: textDecorationProperties?.fontSize,
-            letterSpacing: textDecorationProperties?.letterSpacing,
+            letterSpacing: textDecorationProperties?.letterSpacing ?? 1.4,
             color: textDecorationProperties?.fontColor ?? Colors.white,
           ),
         ),

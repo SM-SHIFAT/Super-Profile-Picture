@@ -23,9 +23,6 @@ class SuperProfilePicture extends StatelessWidget {
   /// If ```borderRadius = null``` then Container will be Circular.
   final double? borderRadius;
 
-  /// Give padding to the container.
-  final EdgeInsetsGeometry? padding;
-
   /// Use any image provider to show images.
   ///
   /// Example: ```AssetImage```, ```NetworkImage```, ```FileImage``` or any similar provider.
@@ -43,7 +40,6 @@ class SuperProfilePicture extends StatelessWidget {
     this.image,
     this.border,
     this.borderRadius,
-    this.padding,
     this.textDecorationProperties,
     this.imageDecorationProperties,
     this.clipBehavior = Clip.antiAlias,
@@ -58,7 +54,6 @@ class SuperProfilePicture extends StatelessWidget {
         label: label,
         borderRadius: borderRadius,
         border: border,
-        padding: padding,
         clipBehavior: clipBehavior,
         textDecorationProperties: textDecorationProperties,
       );
@@ -69,7 +64,6 @@ class SuperProfilePicture extends StatelessWidget {
         label: label,
         borderRadius: borderRadius,
         border: border,
-        padding: padding,
         image: image!,
         clipBehavior: clipBehavior,
         textDecorationProperties: textDecorationProperties,

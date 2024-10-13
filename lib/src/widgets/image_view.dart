@@ -9,7 +9,6 @@ class ImageView extends StatelessWidget {
     required this.image,
     this.imageDecorationProperties,
     required this.label,
-    this.padding,
     this.textDecorationProperties,
     required this.clipBehavior,
   });
@@ -25,9 +24,6 @@ class ImageView extends StatelessWidget {
 
 // Label text data.
   final String label;
-
-// Padding for the contains
-  final EdgeInsetsGeometry? padding;
 
 // Provider image data
   final ImageProvider<Object> image;
@@ -46,7 +42,6 @@ class ImageView extends StatelessWidget {
     return Container(
       height: radius * 2,
       width: radius * 2,
-      padding: padding,
       clipBehavior: clipBehavior,
       decoration: BoxDecoration(
         border: border,
@@ -87,7 +82,7 @@ class ImageView extends StatelessWidget {
           color: imageDecorationProperties?.color,
           opacity: imageDecorationProperties?.opacity,
           colorBlendMode: imageDecorationProperties?.colorBlendMode,
-          fit: imageDecorationProperties?.fit,
+          fit: imageDecorationProperties?.fit ?? BoxFit.cover,
           alignment: imageDecorationProperties?.alignment ?? Alignment.center,
           repeat: imageDecorationProperties?.repeat ?? ImageRepeat.noRepeat,
           centerSlice: imageDecorationProperties?.centerSlice,

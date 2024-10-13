@@ -11,7 +11,7 @@ class ImageDecorationProperties {
   final Color? color;
   final Animation<double>? opacity;
   final BlendMode? colorBlendMode;
-  final BoxFit? fit;
+  final BoxFit fit;
   final AlignmentGeometry alignment;
   final ImageRepeat repeat;
   final Rect? centerSlice;
@@ -31,7 +31,7 @@ class ImageDecorationProperties {
     this.color,
     this.opacity,
     this.colorBlendMode,
-    this.fit,
+    this.fit = BoxFit.cover,
     this.alignment = Alignment.center,
     this.repeat = ImageRepeat.noRepeat,
     this.centerSlice,

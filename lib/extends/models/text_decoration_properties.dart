@@ -25,8 +25,8 @@ class TextDecorationProperties {
   /// Default is ```letterSpacing = 1.4```.
   final double? letterSpacing;
 
-  /// Margin around the label value. default is ```EdgeInsets.all(3.0)```
-  final EdgeInsetsGeometry fontMargin;
+  /// Padding around the label value. default is ```EdgeInsets.all(3.0)```
+  final EdgeInsetsGeometry? padding;
 
   /// Whether to use the italic type variation of glyphs in the font.
   ///
@@ -43,6 +43,6 @@ class TextDecorationProperties {
     this.fontWeight = FontWeight.bold,
     this.letterSpacing = 1.4,
     this.fontStyle,
-    this.fontMargin = const EdgeInsets.all(3.0),
+    this.padding = const EdgeInsets.all(3.0),
   });
 }

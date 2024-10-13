@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:super_profile_picture/super_profile_picture.dart';
 
+import 'experiment.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -16,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Super Profile Picture Showcase'),
     );
   }
 }
@@ -37,26 +39,51 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
+        actions: [
+          ElevatedButton.icon(
+            icon: const Icon(Icons.science_rounded),
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) => const Experiment(),
+                ),
+              );
+            },
+            label: const Text("Experiment"),
+          ),
+        ],
       ),
       body: Center(
           child: Wrap(
         children: [
           getCard(
+            text: "Default",
+          ),
+          getCard(
             text: "Profile with image",
             url: "https://picsum.photos/200/300.jpg",
           ),
           getCard(
-              text: "Border Radius 15 & padding 5",
-              url: "https://picsum.photos/200/300.jpg",
-              borderRadius: 15,
-              padding: EdgeInsets.all(5)),
+            text: "Image with Border",
+            url: "https://picsum.photos/200/300.jpg",
+            border: Border.all(width: 4, color: Colors.blue),
+          ),
           getCard(
-            text: "Cant load image (label shown)",
+            text: "Text with Border",
+            border: Border.all(width: 4, color: Colors.blue),
+          ),
+          getCard(
+            text: "Border Radius 15",
+            url: "https://picsum.photos/200/300.jpg",
+            borderRadius: 15,
+          ),
+          getCard(
+            text: "Image failed (label shown)",
             url: "error_url_or_url_failed_to_load",
           ),
           getCard(
-            text: "Image With padding 10",
-            url: "https://picsum.photos/200/300.jpg",
+            text: "Text With padding 10",
+            // url: "https://picsum.photos/200/300.jpg",
             padding: const EdgeInsets.all(10),
           ),
           getCard(
@@ -79,6 +106,7 @@ class _MyHomePageState extends State<MyHomePage> {
     EdgeInsetsGeometry? padding,
     double? borderRadius,
     bool? useFittedBox,
+    BoxBorder? border,
   }) {
     return SizedBox(
       height: 150,
@@ -92,7 +120,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 label: "Michel Jackson",
                 radius: 30,
                 borderRadius: borderRadius,
-                padding: padding,
                 image: url == null
                     ? null
                     : NetworkImage(
@@ -101,10 +128,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 imageDecorationProperties:
                     ImageDecorationProperties(fit: BoxFit.cover),
                 textDecorationProperties: TextDecorationProperties(
+                    padding: padding,
                     useFittedBox: useFittedBox ?? true,
                     fontSize: 10,
                     maxLabelLength: 2,
                     fontWeight: FontWeight.normal),
+                border: border,
               ),
             ),
             Center(
