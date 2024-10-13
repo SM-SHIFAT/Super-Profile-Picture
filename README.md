@@ -101,6 +101,42 @@ SuperProfilePicture(
 );
 ```
 
+## Properties
+  - label
+  - radius
+  - textDecorationProperties
+    - fontSize;
+    - maxLabelLength;
+    - useFittedBox;
+    - fontColor;
+    - fontWeight;
+    - letterSpacing;
+    - padding;
+    - fontStyle;
+  - imageDecorationProperties
+    - frameBuilder;
+    - loadingBuilder;
+    - errorBuilder;
+    - semanticLabel;
+    - excludeFromSemantics;
+    - width;
+    - height;
+    - color;
+    - opacity;
+    - colorBlendMode;
+    - fit;
+    - alignment;
+    - repeat;
+    - centerSlice;
+    - matchTextDirection;
+    - gaplessPlayback;
+    - isAntiAlias;
+    - filterQuality;
+  - border
+  - borderRadius
+  - image
+  - clipBehavior
+
 ## Future Tasks
 - Add customizable background color function.
 
