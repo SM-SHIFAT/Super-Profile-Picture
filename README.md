@@ -9,7 +9,7 @@
 A customizable Flutter widget for displaying profile pictures, supporting both image and text options. It will show label text in case the image is not provided or fails to load. You can use any image provider, such as ```NetworkImage```, ```AssetImage```, and more, to display the image.
 
 ## Live Demo & Experiment Page
-Live demo: https://google.com
+Live demo: [Demo & Experiment site](https://sm-shifat.github.io/Super-Profile-Picture/)
 
 ## Installation
 i. Add the latest version of this package to your pubspec.yaml file, and run: 'dart pub get':
