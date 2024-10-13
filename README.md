@@ -1,13 +1,13 @@
 
 ![logo](https://github.com/user-attachments/assets/d71e5b91-a3ce-403a-8f10-ad281c5f3ee8)
 [![Flutter Test](https://github.com/SM-SHIFAT/Super-Profile-Picture/actions/workflows/flutter-test.yml/badge.svg)](https://github.com/SM-SHIFAT/Super-Profile-Picture/actions/workflows/flutter-test.yml)
-[![Build GitHub Pages](https://github.com/SM-SHIFAT/Super-Profile-Picture/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/SM-SHIFAT/Super-Profile-Picture/actions/workflows/gh-pages.yml)
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![pub package](https://img.shields.io/pub/v/super_profile_picture.svg)](https://pub.dartlang.org/packages/super_profile_picture)
 [![GitHub popularity](https://img.shields.io/github/stars/SM-SHIFAT/Super-Profile-Picture?logo=github&logoColor=white)](https://github.com/SM-SHIFAT/Super-Profile-Picture/stargazers/)
 ![version](https://img.shields.io/github/v/release/SM-SHIFAT/Super-Profile-Picture)
 
-A customizable Flutter widget for displaying profile pictures, supporting both image and text options.
+A customizable Flutter widget for displaying profile pictures, supporting both image and text options. It will show label text in case the image is not provided or fails to load. You can use any image provider, such as ```NetworkImage```, ```AssetImage```, and more, to display the image.
 
 
 
