@@ -1,6 +1,5 @@
 
 ![logo](https://github.com/user-attachments/assets/d71e5b91-a3ce-403a-8f10-ad281c5f3ee8)
-[![Flutter Test](https://github.com/SM-SHIFAT/Super-Profile-Picture/actions/workflows/flutter-test.yml/badge.svg)](https://github.com/SM-SHIFAT/Super-Profile-Picture/actions/workflows/flutter-test.yml)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![pub package](https://img.shields.io/pub/v/super_profile_picture.svg)](https://pub.dartlang.org/packages/super_profile_picture)
@@ -9,121 +8,100 @@
 
 A customizable Flutter widget for displaying profile pictures, supporting both image and text options. It will show label text in case the image is not provided or fails to load. You can use any image provider, such as ```NetworkImage```, ```AssetImage```, and more, to display the image.
 
+## Live Demo & Experiment Page
+Live demo: https://google.com
 
+## Installation
+i. Add the latest version of this package to your pubspec.yaml file, and run: 'dart pub get':
+```yaml
+dependancies:
+  super_profile_picture: ^1.0.0
+```
 
-![bandicam 2021-09-22 20-35-48-079 (online-video-cutter com)](https://user-images.githubusercontent.com/37553901/134374902-7247ec0d-8c00-4218-99c1-701cc1f01565.gif)
+ii. Import the package in your Flutter App and use it.
+```dart
+import 'package:super_profile_picture/super_profile_picture.dart';
+```
 
-## Style
+## Note
+The background color will be set according to the first letter of the label. Customization of the background color is not currently supported but may be added in the future.
 
-### Default Style
+## Code Sample
 
-![image](https://user-images.githubusercontent.com/37553901/134119014-3b51bea5-e0bf-49b1-aa3e-8d5f91c6e92d.png)
+### Default
+
+![Screenshot_161](https://github.com/user-attachments/assets/0f59acec-af50-4f44-bc20-d96a133bcf19) ![Screenshot_160](https://github.com/user-attachments/assets/eededd37-5dbf-4aac-a28b-85fc4be36fa9)
+
 
 ``` dart
-ProfilePicture(
-    name: 'Dees',
-    radius: 31,
-    fontsize: 21,
-);
-
-ProfilePicture(
-    name: 'Aditya Dharmawan Saputra',
-    radius: 31,
-    fontsize: 21,
+SuperProfilePicture(
+    label: "Super Profile Picture",
+    radius: 30,
 );
 ```
 
-### Random Color
-
-![image](https://user-images.githubusercontent.com/37553901/134119324-8271b270-c695-4141-b079-bdc1c09ec0b0.png)
-
 ``` dart
-ProfilePicture(
-    name: 'Aditya Dharmawan Saputra',
-    radius: 31,
-    fontsize: 21,
-    random: true,
+SuperProfilePicture(
+    label: "Super Profile Picture",
+    radius: 30,
+    image: NetworkImage("https://picsum.photos/200/300.jpg"),
+
 );
 ```
 
-### Max letter
 
-![image](https://user-images.githubusercontent.com/37553901/134119854-72deba5c-67e5-42cd-b227-8dcf2b5beb9f.png)
+
+### Max Label Length
+
+![Screenshot_162](https://github.com/user-attachments/assets/b41b66ce-c84a-4b21-9f68-040033f2b875)
+
 
 ``` dart
 
-ProfilePicture(
-    name: 'Aditya Dharmawan Saputra',
-    radius: 31,
-    fontsize: 21,
-    count: 3,
+SuperProfilePicture(
+    label: "Super Profile Picture",
+    radius: 30,
+    textDecorationProperties: TextDecorationProperties(
+         maxLabelLength: 3,  
+    ),
 );
 ```
 
 ### Empty Name / Blank
 
-![image](https://user-images.githubusercontent.com/37553901/134119842-3a56f038-516e-4e08-a884-27eac8db73eb.png)
+![Screenshot_163](https://github.com/user-attachments/assets/c9d7ca19-6bf9-407f-9eaa-bbb758117345)
 
 ``` dart
-ProfilePicture(
-    name: '',
-    radius: 31,
-    fontsize: 21,
+SuperProfilePicture(
+    label: "",
+    radius: 30,
 );
 ```
 
-### With Images
+### With Border
 
-![image](https://user-images.githubusercontent.com/37553901/134119814-8199fe68-cbc7-4a8d-8d4f-4abb16343a80.png)
+![Screenshot_164](https://github.com/user-attachments/assets/d0fa2da8-d160-46d0-92ea-442044872bda) ![Screenshot_165](https://github.com/user-attachments/assets/494b0360-c277-4067-878e-7ddc5745d282)
+
 
 ``` dart
-ProfilePicture(
-    name: 'Aditya Dharmawan Saputra',
-    radius: 31,
-    fontsize: 21,
-    img: 'https://avatars.githubusercontent.com/u/37553901?v=4',
+SuperProfilePicture(
+    label: "Super Profile Picture",
+    radius: 30,
+    border: Border.all(width: 6, color: Colors.blue),
 );
 ```
 
-### Tooltips without role
-
-![image](https://user-images.githubusercontent.com/37553901/134119791-21eba1c7-e50f-44aa-b66d-30c41de98a87.png)
-
 ``` dart
-ProfilePicture(
-    name: 'Aditya Dharmawan Saputra',
-    role: '',
-    radius: 31,
-    fontsize: 21,
-    tooltip: true,
+SuperProfilePicture(
+    label: "Super Profile Picture",
+    radius: 30,
+    image: NetworkImage("https://picsum.photos/200/300.jpg"),
+    border: Border.all(width: 6, color: Colors.blue),
+
 );
 ```
 
-### Tooltips with role
+## Future Tasks
+- Add customizable background color function.
 
-![image](https://user-images.githubusercontent.com/37553901/134119720-ec140db1-b3ab-4422-90af-323b02d5060d.png)
 
-``` dart
-ProfilePicture(
-    name: 'Aditya Dharmawan Saputra',
-    role: 'ADMINISTRATOR',
-    radius: 31,
-    fontsize: 21,
-    tooltip: true,
-);
-```
-
-### Tooltips with role and images
-
-![image](https://user-images.githubusercontent.com/37553901/134119679-44c74bcb-b51b-463f-ade1-42697d68eac5.png)
-
-``` dart
-ProfilePicture(
-    name: 'Aditya Dharmawan Saputra',
-    role: 'ADMINISTRATOR',
-    radius: 31,
-    fontsize: 21,
-    tooltip: true,
-    img: 'https://avatars.githubusercontent.com/u/37553901?v=4',
-);
-```
